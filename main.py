@@ -10,6 +10,9 @@ from aiogram.types import BotCommand
 from bot.dispacher import TOKEN
 from bot.handlers import dp
 
+from db import db
+from db.bootstrap import create_tables
+
 
 # from bot.middilwares import all_middleware
 # from aiogram.utils.i18n import I18n
@@ -28,6 +31,8 @@ async def main() -> None:
     # await bot.delete_webhook()
     await set_bot_commands(bot)
     # await all_middleware(dp, i18n)
+    db.init()
+    await db.create_all()
     await dp.start_polling(bot)
 
 

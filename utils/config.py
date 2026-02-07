@@ -1,5 +1,4 @@
 from os import getenv
-from pathlib import Path
 
 from dotenv import load_dotenv
 
@@ -27,7 +26,7 @@ class PaymentConfig:
     PAY_TOKEN = getenv("PAY_TOKEN")
 
 class BotConfig:
-    TOKEN = getenv("TOKEN")
+    TOKEN = getenv("BOT_TOKEN")
 
 
 class CF:
